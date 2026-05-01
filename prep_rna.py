@@ -1,4 +1,4 @@
-"""Preprocess PBMC-10k for GRN inference."""
+"""Preprocess for GRN inference."""
 from pathlib import Path
 import scanpy as sc
 
@@ -19,7 +19,7 @@ DATASETS = {
 
 src = Path(DATASETS[CURRENT_RUN]["raw_h5"])
 
-adata = sc.read_10x_h5(src)
+adata = sc.read_10x_h5(src)    
 adata.var_names_make_unique()
 print(f"raw: {adata.shape}")
 
