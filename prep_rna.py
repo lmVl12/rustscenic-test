@@ -4,14 +4,14 @@ import scanpy as sc
 
 # Add a dictionary of datasets (to be changed every time)
 
-CURRENT_RUN = "pbmc_3k"
+CURRENT_RUN = "human_brain_10k"
 
 DATASETS = {
     "pbmc_3k": {
         "raw_h5": "data/pbmc_unsorted_3k_filtered_feature_bc_matrix.h5",
         "rna_out": "data/pbmc_3k_rna.h5ad"
     },
-    "brain_10k": {
+    "human_brain_10k": {
         "raw_h5": "data/10k_Human_Brain_MO_gemx_raw_feature_bc_matrix.h5",
         "rna_out": "data/human_brain_10k_rna.h5ad"
     }

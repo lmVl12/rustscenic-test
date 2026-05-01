@@ -18,7 +18,7 @@ import tempfile
 import time
 from pathlib import Path
 
-CURRENT_RUN = "pbmc_3k"
+CURRENT_RUN = "human_brain_10k"
 
 DATASETS = {
     "pbmc_3k": {
@@ -26,7 +26,7 @@ DATASETS = {
         "peaks": "data/pbmc_unsorted_3k_atac_peaks.bed",
         "atac_h5ad": "data/pbmc_3k_atac.h5ad"
     },
-    "brain_10k": {
+    "human_brain_10k": {
         "fragments": "data/10k_Human_Brain_MO_gemx_atac_fragments.tsv.gz",
         "peaks": "data/10k_Human_Brain_MO_gemx_atac_peaks.bed",
         "atac_h5ad": "data/human_brain_10k_atac.h5ad"

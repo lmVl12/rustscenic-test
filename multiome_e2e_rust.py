@@ -12,10 +12,11 @@ import pandas as pd
 import anndata as ad
 import scanpy as sc
 from sklearn.metrics import adjusted_rand_score
+import resource
 
 import rustscenic, rustscenic.grn, rustscenic.aucell, rustscenic.topics
 
-CURRENT_RUN = "pbmc_3k" 
+CURRENT_RUN = "human_brain_10k" 
 
 DATASETS = {
     "pbmc_3k": {
@@ -26,7 +27,7 @@ DATASETS = {
     },
     "human_brain_10k": {
         "rna": "data/human_brain_10k_rna.h5ad",
-        "atac": "data/human_brain_atac.h5ad",
+        "atac": "data/human_brain_10k_atac.h5ad",
         "tfs": "data/tfs_hg38.txt",
         "out": "data/human_brain_10k_results.json"
     }
@@ -122,3 +123,6 @@ print(f"\nARI of grn-based cell-type clustering (via top regulon activity) vs AT
 cell_by_topreg = auc.idxmax(axis=1).values
 mapped = np.unique(cell_by_topreg, return_inverse=True)[1]
 print(f"  {adjusted_rand_score(cluster, mapped):.4f}  ({len(set(cell_by_topreg))} unique top regulons)")
+
+peak_mem = resource.getrusage(resource.RUSAGE_SELF).ru_maxrss
+print(f"Peak Memory Usage: {peak_mem / 1024 / 1024:.2f} GB")

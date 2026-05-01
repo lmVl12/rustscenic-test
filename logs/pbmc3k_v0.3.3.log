@@ -1,18 +1,18 @@
 [rustscenic.grn] fitting GRNBoost2 — 2,767 cells × 21,335 genes × 1467 TFs × n_estimators=300 (early-stop window=25). Running in parallel, this can take seconds to tens of minutes depending on shape...
-[rustscenic.grn] done in 330.4s — 2,367,067 edges.
+[rustscenic.grn] done in 402.9s — 2,367,067 edges.
 [rustscenic.topics] online-VB LDA — 2,767 docs × 81,156 vocab (nnz=15,538,828), K=10, 20 passes, batch_size=256. Running in parallel...
-[rustscenic.topics] done in 188.6s — 3/10 topics carry an argmax assignment.
+[rustscenic.topics] done in 237.6s — 3/10 topics carry an argmax assignment.
 RNA  (2767, 21335)   ATAC  (451378, 81156)
 shared cells: 2767
 
 --- grn (RNA) ---  cells=2767  genes=21335  tfs=1467
-  wall: 330.9s  edges: 2367067
+  wall: 403.4s  edges: 2367067
 
 --- aucell ---  regulons=1467
-  wall: 0.3s  shape (2767, 1467)
+  wall: 0.4s  shape (2767, 1467)
 
 --- topics (ATAC) ---  K=10
-  wall: 188.6s  unique top-1 topic: 3
+  wall: 237.6s  unique top-1 topic: 3
   atac leiden clusters: 3
 
 top-10 cluster-discriminative regulons (by ANOVA F):
@@ -27,10 +27,11 @@ top-10 cluster-discriminative regulons (by ANOVA F):
   KLF4_regulon               F= 3680.5  p=0.00e+00
   BACH1_regulon              F= 3668.0  p=0.00e+00
 
-=== TOTAL pipeline wall-clock: 519.9s (8.7 min) ===
-  grn:     330.9s  (64%)
-  aucell:    0.3s  (0%)
-  topics:  188.6s  (36%)
+=== TOTAL pipeline wall-clock: 641.4s (10.7 min) ===
+  grn:     403.4s  (63%)
+  aucell:    0.4s  (0%)
+  topics:  237.6s  (37%)
 
 ARI of grn-based cell-type clustering (via top regulon activity) vs ATAC leiden:
   0.1190  (187 unique top regulons)
+Peak Memory Usage: 3.19 GB
