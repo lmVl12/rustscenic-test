@@ -1,0 +1,9 @@
+data/*.h5ad
+data/*.h5
+data/*.tsv.gz
+data/*.bed
+*.npy
+__pycache__/
+.ipynb_checkpoints/
+venv/
+*.Zone.Identifier
