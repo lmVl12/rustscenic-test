@@ -1,9 +1,6 @@
 """End-to-end rustscenic on paired 10x Multiome: grn → aucell (RNA) +
 topics (ATAC). Does regulon activity from grn correlate with ATAC topic
 assignment (should — same cells, same underlying cell-type structure)?
-
-Also: benchmark total wall-clock vs what full pyscenic pipeline would take
-(arboreto 393s on PBMC-3k + pyscenic.aucell 36s on PBMC-10k → scale).
 """
 import time
 from pathlib import Path
@@ -15,7 +12,7 @@ from sklearn.metrics import adjusted_rand_score
 import resource
 
 import rustscenic, rustscenic.grn, rustscenic.aucell, rustscenic.topics
-
+# Add a dictionary for easy rerun 
 CURRENT_RUN = "human_brain_10k" 
 
 DATASETS = {
