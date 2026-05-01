@@ -1,15 +1,8 @@
 """End-to-end example: fragments.tsv.gz + peaks.bed -> cells × peaks AnnData.
-
-Demonstrates rustscenic.preproc on synthetic data you can verify by eye.
-No external downloads, no paths to configure — runs standalone.
-
 Workflow mirrors what you'd do on real 10x multiome output:
-
     1. Write tiny fragments.tsv.gz + peaks.bed to a temp dir
     2. Call rustscenic.preproc.fragments_to_matrix
     3. Verify shape, per-cell QC, and the expected counts
-
-Runtime: <1 second.
 """
 from __future__ import annotations
 
@@ -17,7 +10,7 @@ import gzip
 import tempfile
 import time
 from pathlib import Path
-
+# Add a dictionary for easy rerun
 CURRENT_RUN = "human_brain_10k"
 
 DATASETS = {
