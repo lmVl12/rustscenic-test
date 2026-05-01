@@ -24,6 +24,7 @@ pip install igraph leidenalg
 - Virtual OS: Ubuntu 22.04.5 LTS LTS on WSL2
 - Allocated RAM: 24.0 GB (out of 32.0 GB)
 - Compute Threads: 16 Logical Processors (mapped to i7-14650HX)
+- Python 3.12.13
 
 ## Structure
 File Descriptions:
