@@ -1,0 +1,5 @@
+Dataset: human_brain_10k
+Raw: 10261 cells, 38606 genes
+Post-QC: 9665 cells, 32317 genes
+Median genes/cell: 2559.0
+Output saved to: data/human_brain_10k_rna.h5ad

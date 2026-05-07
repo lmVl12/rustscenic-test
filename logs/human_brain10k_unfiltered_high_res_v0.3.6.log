@@ -1,0 +1,39 @@
+[rustscenic.grn] fitting GRNBoost2 — 10,198 cells × 32,856 genes × 1760 TFs × n_estimators=300 (early-stop window=25). Running in parallel, this can take seconds to tens of minutes depending on shape...
+[rustscenic.grn] done in 4588.2s — 4,497,808 edges.
+[rustscenic.topics] online-VB LDA — 10,198 docs × 127,370 vocab (nnz=81,689,918), K=20, 20 passes, batch_size=256. Running in parallel...
+[rustscenic.topics] done in 3503.3s — 7/20 topics carry an argmax assignment.
+/home/mila/rustscenic-test/brain_e2e_rust.py:86: UserWarning: Some cells have zero counts
+  sc.pp.normalize_total(atac_norm); sc.pp.log1p(atac_norm)
+RNA  (10211, 32856)   ATAC  (10198, 127370)
+shared cells: 10198
+
+--- grn (RNA) ---  cells=10198  genes=32856  tfs=1760
+  wall: 4590.6s  edges: 4497808
+
+--- aucell ---  regulons=1760
+  wall: 6.4s  shape (10198, 1760)
+
+--- topics (ATAC) ---  K=20
+  wall: 3506.6s  unique top-1 topic: 7
+  atac leiden clusters: 6
+
+top-10 cluster-discriminative regulons (by ANOVA F):
+  IKZF1_regulon              F=21914.0  p=0.00e+00
+  FLI1_regulon               F=20956.3  p=0.00e+00
+  TFEC_regulon               F=20521.5  p=0.00e+00
+  HCLS1_regulon              F=19594.5  p=0.00e+00
+  NFATC2_regulon             F=19250.2  p=0.00e+00
+  RUNX1_regulon              F=19130.3  p=0.00e+00
+  CEBPD_regulon              F=19081.2  p=0.00e+00
+  MEF2A_regulon              F=18825.7  p=0.00e+00
+  SMAP2_regulon              F=17632.5  p=0.00e+00
+  FOXN3_regulon              F=17364.0  p=0.00e+00
+
+=== TOTAL pipeline wall-clock: 8103.6s (135.1 min) ===
+  grn:    4590.6s  (57%)
+  aucell:    6.4s  (0%)
+  topics: 3506.6s  (43%)
+
+ARI of grn-based cell-type clustering (via top regulon activity) vs ATAC leiden:
+  0.5105  (250 unique top regulons)
+Peak Memory Usage: 11.91 GB
