@@ -2,6 +2,12 @@ data/*.h5ad
 data/*.h5
 data/*.tsv.gz
 data/*.bed
+data/*tsv.gz.tbi
+data/*feather
+data/*feather.sha1sum
+data/*csv
+data/*tbl
+data/*tsv
 *.npy
 __pycache__/
 .ipynb_checkpoints/

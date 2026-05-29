@@ -1,0 +1,29 @@
+{
+  "output_dir": "out",
+  "atac_matrix_path": "out/atac_cells_by_peaks.h5ad",
+  "grn_path": "out/grn.parquet",
+  "regulons_path": "out/regulons.json",
+  "candidate_regulons_path": "out/candidate_regulons.json",
+  "pruned_regulons_path": null,
+  "aucell_path": "out/aucell.parquet",
+  "topics_dir": "out/topics",
+  "cistarget_path": "out/cistarget_enriched.parquet",
+  "enhancer_links_path": "out/enhancer_links.parquet",
+  "eregulons_path": "out/eregulons.parquet",
+  "integrated_adata_path": "out/rna_with_regulons.h5ad",
+  "elapsed": {
+    "preproc": 0.0,
+    "topics": 587.3496122500001,
+    "grn": 2071.980409830998,
+    "cistarget": 4.212626237000222,
+    "enhancer": 188.38145273700138,
+    "eregulons": 200.839957436001,
+    "aucell": 2.488173427998845
+  },
+  "n_cells": 8215,
+  "n_regulons": 1693,
+  "n_candidate_regulons": 1693,
+  "n_pruned_regulons": null,
+  "n_eregulons": 1693,
+  "regulon_source": "candidate_grn_top_targets"
+}

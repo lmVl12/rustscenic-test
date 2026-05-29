@@ -1,0 +1,91 @@
+{
+    "test": "https://www.10xgenomics.com/datasets/fresh-frozen-lymph-node-with-b-cell-lymphoma-14-k-sorted-nuclei-1-standard-1-0-0",
+    "rustscenic_version": "0.4.1",
+    "api_call": "rustscenic.grn.infer(n_estimators=300) + rustscenic.aucell.score + rustscenic.topics.fit(K=10)",
+    "dataset": {
+        "name": "lymphoma_14k"
+    },
+    "shapes": {
+        "rna_post_qc": [
+            14039,
+            27178
+        ],
+        "atac_subset_to_rna_cells": [
+            14039,
+            70132
+        ]
+    },
+    "metrics": {
+        "ari": 0.09609655307241403,
+        "peak_rss_gb": 8.401187896728516,
+        "n_regulons": 1663
+    },
+    "elapsed_per_stage": {
+        "preproc": 0.0,
+        "topics": 954.58408788,
+        "grn": 2526.880309794,
+        "aucell": 4.136681281000165,
+        "cistarget": null,
+        "enhancer": null,
+        "eregulons": null
+    },
+    "env": {
+        "python": "3.12.13",
+        "scanpy": "1.12.1",
+        "anndata": "0.12.11",
+        "os": "Linux-6.6.87.2-microsoft-standard-WSL2-x86_64-with-glibc2.35",
+        "cpu": "x86_64"
+    },
+    "headline_results": [
+        {
+            "name": "GRHPR_regulon",
+            "F": 13285.5107421875,
+            "p": 0.0
+        },
+        {
+            "name": "POU2F2_regulon",
+            "F": 12785.8486328125,
+            "p": 0.0
+        },
+        {
+            "name": "PAX5_regulon",
+            "F": 12716.69140625,
+            "p": 0.0
+        },
+        {
+            "name": "MEF2B_regulon",
+            "F": 12562.6953125,
+            "p": 0.0
+        },
+        {
+            "name": "SPIB_regulon",
+            "F": 11649.23046875,
+            "p": 0.0
+        },
+        {
+            "name": "EBF1_regulon",
+            "F": 11462.5947265625,
+            "p": 0.0
+        },
+        {
+            "name": "E2F5_regulon",
+            "F": 11443.7080078125,
+            "p": 0.0
+        },
+        {
+            "name": "CPEB1_regulon",
+            "F": 11426.6884765625,
+            "p": 0.0
+        },
+        {
+            "name": "BCL11A_regulon",
+            "F": 10837.796875,
+            "p": 0.0
+        },
+        {
+            "name": "THRB_regulon",
+            "F": 10704.6484375,
+            "p": 0.0
+        }
+    ]
+}

@@ -1,0 +1,42 @@
+[rustscenic.grn] fitting GRNBoost2 — 14,039 cells × 27,178 genes × 1663 TFs × n_estimators=300 (early-stop window=25). Running in parallel, this can take seconds to tens of minutes depending on shape...
+[rustscenic.grn] done in 2524.9s — 3,061,291 edges.
+[rustscenic.topics] online-VB LDA — 14,039 docs × 70,132 vocab (nnz=65,232,913), K=10, 20 passes, batch_size=256. Running in parallel...
+[rustscenic.topics] done in 953.4s — 10/10 topics carry an argmax assignment.
+/home/mila/rustscenic-test/lymphoma_e2e_rust.py:164: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  "scanpy": sc.__version__,
+/home/mila/rustscenic-test/lymphoma_e2e_rust.py:165: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('anndata')` instead.
+  "anndata": ad.__version__,
+RNA  (14039, 27178)   ATAC  (14039, 70132)
+shared cells: 14039
+
+--- grn (RNA) ---  cells=14039  genes=27178  tfs=1663
+  wall: 2526.9s  edges: 3061291
+
+--- aucell ---  regulons=1663
+  wall: 4.1s  shape (14039, 1663)
+
+--- topics (ATAC) ---  K=10
+  wall: 954.6s  unique top-1 topic: 10
+  atac leiden clusters: 4
+
+top-10 cluster-discriminative regulons (by ANOVA F):
+  GRHPR_regulon              F=13285.5  p=0.00e+00
+  POU2F2_regulon             F=12785.8  p=0.00e+00
+  PAX5_regulon               F=12716.7  p=0.00e+00
+  MEF2B_regulon              F=12562.7  p=0.00e+00
+  SPIB_regulon               F=11649.2  p=0.00e+00
+  EBF1_regulon               F=11462.6  p=0.00e+00
+  E2F5_regulon               F=11443.7  p=0.00e+00
+  CPEB1_regulon              F=11426.7  p=0.00e+00
+  BCL11A_regulon             F=10837.8  p=0.00e+00
+  THRB_regulon               F=10704.6  p=0.00e+00
+
+=== TOTAL pipeline wall-clock: 3485.6s (58.1 min) ===
+  grn:    2526.9s  (72%)
+  aucell:    4.1s  (0%)
+  topics:  954.6s  (27%)
+
+ARI of grn-based cell-type clustering (via top regulon activity) vs ATAC leiden:
+  0.0961  (564 unique top regulons)
+
+[DONE] JSON Report saved to: out/lymphoma_14k_results.json

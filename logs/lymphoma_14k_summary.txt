@@ -1,5 +1,0 @@
-Dataset: lymphoma_14k
-Raw: 14645 cells, 36601 genes
-Post-QC: 14039 cells, 27178 genes
-Median genes/cell: 1207.0
-Output saved to: data/lymphoma14k_rna.h5ad

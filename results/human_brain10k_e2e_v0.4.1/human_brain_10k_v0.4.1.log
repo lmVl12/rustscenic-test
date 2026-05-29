@@ -1,0 +1,43 @@
+[rustscenic.grn] fitting GRNBoost2 — 8,215 cells × 32,317 genes × 1748 TFs × n_estimators=300 (early-stop window=25). Running in parallel, this can take seconds to tens of minutes depending on shape...
+[rustscenic.grn] done in 2142.7s — 4,293,902 edges.
+[rustscenic.topics] online-VB LDA — 8,215 docs × 123,089 vocab (nnz=63,334,984), K=10, 20 passes, batch_size=256. Running in parallel...
+[rustscenic.topics] done in 1055.9s — 7/10 topics carry an argmax assignment.
+/home/mila/rustscenic-test/human_brain_e2e_rust.py:179: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('scanpy')` instead
+  "scanpy": sc.__version__,
+/home/mila/rustscenic-test/human_brain_e2e_rust.py:180: FutureWarning: `__version__` is deprecated, use `importlib.metadata.version('anndata')` instead.
+  "anndata": ad.__version__,
+RNA  (9665, 32317)   ATAC  (9665, 123089)
+shared cells: 9665
+Filtered out immune cells. Neurons remaining: 8215
+
+--- grn (RNA) ---  cells=8215  genes=32317  tfs=1748
+  wall: 2144.1s  edges: 4293902
+
+--- aucell ---  regulons=1748
+  wall: 1.9s  shape (8215, 1748)
+
+--- topics (ATAC) ---  K=10
+  wall: 1056.7s  unique top-1 topic: 7
+  atac leiden clusters: 7
+
+top-10 cluster-discriminative regulons (by ANOVA F):
+  SRRM3_regulon              F=12782.8  p=0.00e+00
+  CELF4_regulon              F=12251.7  p=0.00e+00
+  ZMAT4_regulon              F=11341.5  p=0.00e+00
+  ADARB1_regulon             F=10330.7  p=0.00e+00
+  BCL11A_regulon             F= 9889.6  p=0.00e+00
+  ZBTB20_regulon             F= 9650.0  p=0.00e+00
+  ZNF483_regulon             F= 9644.0  p=0.00e+00
+  CELF5_regulon              F= 9556.0  p=0.00e+00
+  GLIS1_regulon              F= 9408.1  p=0.00e+00
+  ZNF273_regulon             F= 9357.5  p=0.00e+00
+
+=== TOTAL pipeline wall-clock: 3202.7s (53.4 min) ===
+  grn:    2144.1s  (67%)
+  aucell:    1.9s  (0%)
+  topics: 1056.7s  (33%)
+
+ARI of grn-based cell-type clustering (via top regulon activity) vs ATAC leiden:
+  0.4514  (128 unique top regulons)
+
+[DONE] JSON Report saved to: out/human_brain_10k_results.json
